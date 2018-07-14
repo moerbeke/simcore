@@ -23,6 +23,8 @@
 
 # Installation
 
+Download [simcore-0.1.0](https://github.com/moerbeke/simcore/archive/simcore-0.1.0.tar.gz)
+
 ```
 tar xzvf simcore-0.1.0.tar.gz
 cd simcore-0.1.0
