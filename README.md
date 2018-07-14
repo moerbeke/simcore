@@ -23,7 +23,8 @@
 
 # Installation
 
-pip install -r requirements.txt
+```
 tar xzvf simcore-0.1.0.tar.gz
 cd simcore-0.1.0
 python setup.py install
+```
