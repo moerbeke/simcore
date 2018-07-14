@@ -69,7 +69,7 @@ class Simulator():
         self.start_sim_submodels()
         self.__started = True
 
-    def isStarted(self):
+    def is_started(self):
         return self.__started
 
     def stop(self):
