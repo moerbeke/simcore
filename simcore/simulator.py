@@ -61,15 +61,15 @@ class Simulator():
 
     @abc.abstractmethod
     def start_sim_submodels(self):
-        raise NotImplementedError
+        pass
 
     @abc.abstractmethod
     def stop_sim_submodels(self):
-        raise NotImplementedError
+        pass
 
     @abc.abstractmethod
     def step_sim_submodels(self, delta_simclock=1):
-        raise NotImplementedError
+        pass
 
     def start(self):
         self._env.set_vehicle_state(self.vehicle_init_state())
