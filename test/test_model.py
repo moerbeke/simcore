@@ -1,8 +1,8 @@
 ########################################################################
 #
-# env.py
+# test_model.py
 #
-# Copyright (C) 2018 Antonio Ceballos Roa
+# Copyright (C) 2018, Antonio Ceballos Roa
 #
 #   This file is part of Simcore.
 #
@@ -21,17 +21,33 @@
 #
 ########################################################################
 
-import abc
+import unittest
 
-from . import model
+from simcore import model
 
-class Env(model.Model):
-    """Abstract environment
+class TestModel(unittest.TestCase):
+    """
+    Unit test for model.py
     """
 
-    def __init__(self):
-        super().__init__()
+    class _ConcreteModel(model.Model):
+        def step(self, deltatime=1):
+            pass
 
-    @abc.abstractmethod
-    def set_vehicle_state(self, state):
+    def setUp(self):
         pass
+
+    def tearDown(self):
+        pass
+
+    def test_model_is_abstract(self):
+        with self.assertRaises(TypeError):
+            abcmodel = model.Model()
+
+    def test_concrete_model(self):
+        amodel = TestModel._ConcreteModel()
+
+    def test_step(self):
+        amodel = TestModel._ConcreteModel()
+        amodel.step()
+        amodel.step(2)

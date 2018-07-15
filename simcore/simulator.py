@@ -17,20 +17,14 @@
 #   GNU General Public License for more details.
 #
 #   You should have received a copy of the GNU General Public License
-#   along with Foobar.  If not, see <https://www.gnu.org/licenses/>.
+#   along with Simcore.  If not, see <https://www.gnu.org/licenses/>.
 #
 ########################################################################
 
 import abc
 
-########################################################################
-# class Simulator
-#
-#   Base class of a simulator, including environment and vehicle models.
-########################################################################
-
 class Simulator():
-    """Implement a simulator
+    """Base class of a simulator
 
     This simulator includes:
       - a model of an environment
@@ -67,15 +61,15 @@ class Simulator():
 
     @abc.abstractmethod
     def start_sim_submodels(self):
-        pass
+        raise NotImplementedError
 
     @abc.abstractmethod
     def stop_sim_submodels(self):
-        pass
+        raise NotImplementedError
 
     @abc.abstractmethod
     def step_sim_submodels(self, delta_simclock=1):
-        pass
+        raise NotImplementedError
 
     def start(self):
         self._env.set_vehicle_state(self.vehicle_init_state())

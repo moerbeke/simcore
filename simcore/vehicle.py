@@ -17,19 +17,15 @@
 #   GNU General Public License for more details.
 #
 #   You should have received a copy of the GNU General Public License
-#   along with Foobar.  If not, see <https://www.gnu.org/licenses/>.
+#   along with Simcore.  If not, see <https://www.gnu.org/licenses/>.
 #
 ########################################################################
 
 from . import model
 
-########################################################################
-# class Vehicle
-#
-#   Generic vehicle.
-########################################################################
-
 class Vehicle(model.Model):
+    """Abstract vehicle
+    """
 
     def __init__(self):
         super().__init__()
