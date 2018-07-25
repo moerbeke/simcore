@@ -80,8 +80,8 @@ class Simulator():
         return self.__started
 
     def stop(self):
-        self._env.stop()
         self.stop_sim_submodels()
+        self.__started = False
 
     def step(self, delta_simclock=1):
         self._env.step(delta_simclock)

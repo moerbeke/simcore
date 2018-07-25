@@ -39,8 +39,6 @@ class TestSimulator(unittest.TestCase):
                 pass
             def set_vehicle_state(self, state):
                 pass
-            def stop(self):
-                pass
 
         class _ConcreteVehicle(vehicle.Vehicle):
             def step(self, deltatime=1):
@@ -79,14 +77,14 @@ class TestSimulator(unittest.TestCase):
         self._sim.vehicle
         self.assertFalse(self._sim.is_started())
 
-    def test_start(self):
+    def test_start_step_stop(self):
         self._sim.start()
         self.assertTrue(self._sim.is_started())
-
-    def test_stop(self):
         self._sim.stop()
         self.assertFalse(self._sim.is_started())
-
-    def test_step(self):
+        self._sim.start()
+        self.assertTrue(self._sim.is_started())
         self._sim.step()
         self._sim.step(2)
+        self._sim.stop()
+        self.assertFalse(self._sim.is_started())
