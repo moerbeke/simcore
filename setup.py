@@ -3,7 +3,7 @@
 from distutils.core import setup
 
 setup(name='simcore',
-      version='0.3.0',
+      version='0.3.0-e',
       description='Simcore',
       author='Antonio Ceballos Roa',
       author_email='aceballos@gmail.com',
